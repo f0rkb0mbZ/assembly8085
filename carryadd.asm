@@ -1,0 +1,14 @@
+# ORG 8000H
+# BEGIN 8000H
+	   MVI A,10
+	   MVI B,11
+	   MVI C,00
+	   ADD B
+	   JNC 800B
+	   INR C
+	   STA 9001
+	   STA 9000
+	   MOV A,C
+	   STA 9001
+	   HLT
+

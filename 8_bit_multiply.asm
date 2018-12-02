@@ -1,0 +1,15 @@
+# ORG 8000
+# BEGIN 8000
+	   LHLD 8050
+	   XCHG
+	   MOV C,D
+	   MVI D,00
+	   LXI H,0000
+
+LOOP:	   DAD D
+	   DCR C
+	   JNZ LOOP
+	   SHLD 8052
+	   HLT
+# ORG 8050
+# DB 24H, 19H

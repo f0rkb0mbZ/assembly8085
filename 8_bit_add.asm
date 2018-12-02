@@ -1,0 +1,8 @@
+	   LDA 9000
+	   MOV B,A
+	   LDA 9001
+	   ADD B
+	   STA 9002
+	   HLT
+# ORG 9000H
+# DB FF, FF

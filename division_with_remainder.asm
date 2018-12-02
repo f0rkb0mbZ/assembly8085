@@ -1,0 +1,20 @@
+# ORG 8000H
+# BEGIN 8000H
+	   LXI H,8050
+	   MOV B,M
+	   MVI C,00
+	   INX H
+	   MOV A,M
+
+NEXT:	   CMP B
+	   JC LOOP
+	   SUB B
+	   INR C
+	   JMP NEXT
+
+LOOP:	   STA 8052
+	   MOV A,C
+	   STA 8053
+	   HLT
+# ORG 8050H
+# DB 05H, 07H

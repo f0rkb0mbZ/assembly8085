@@ -1,0 +1,32 @@
+# ORG 8000
+# BEGIN 8000
+	   MVI B,05
+
+LOOP1:	   LXI H,8050
+	   MOV C,B
+	   DCR C
+	   MOV A,B
+	   CPI 01
+	   JZ STOP
+
+LOOP2:	   MOV A,M
+	   INX H
+	   CMP M
+	   JC NEXT
+	   CALL SWAP
+
+NEXT:	   DCR C
+	   JNZ LOOP2
+	   DCR B
+	   JNZ LOOP1
+
+STOP:	   HLT
+
+SWAP:	   MOV D,M
+	   MOV M,A
+	   DCX H
+	   MOV M,D
+	   INX H
+	   RET
+# ORG 8050
+# DB 05H,02H,03H,09H,06H
