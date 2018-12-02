@@ -1,0 +1,14 @@
+# ORG 8000
+# BEGIN 8000
+	   LHLD 8050
+	   MOV A,L
+	   CMA
+	   MOV L,A
+	   MOV A,H
+	   CMA
+	   MOV H,A
+	   INX H
+	   SHLD 8052
+	   HLT
+# ORG 8050
+# DB 02H, 07H
