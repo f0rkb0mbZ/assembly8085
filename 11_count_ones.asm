@@ -1,0 +1,19 @@
+# ORG 8000
+# BEGIN 8000
+	   LDA 9050
+	   MVI B,08
+	   MVI C,00
+
+LOOP:	   RRC
+	   JC NEXT
+	   DCR B
+	   JNZ LOOP
+
+NEXT:	   INR C
+	   DCR B
+	   JNZ LOOP
+	   MOV A,C
+	   STA 9051
+	   HLT
+# ORG 9050
+# DB AA
